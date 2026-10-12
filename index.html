@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belajar Kiro — AI-Powered Dev Environment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="nav-inner">
+      <span class="nav-logo" aria-label="Belajar Kiro">⚡ Belajar Kiro</span>
+      <ul class="nav-links">
+        <li><a href="#modules" class="nav-link">Modul</a></li>
+        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="badge">AI-Powered IDE</div>
+      <h1 class="hero-title">Belajar <span class="gradient-text">Kiro</span></h1>
+      <p class="hero-tagline">Kuasai Kiro — development environment bertenaga AI yang bekerja seperti partner coding sungguhan. Tulis kode lebih cepat, lebih cerdas, lebih menyenangkan.</p>
+      <a href="#modules" class="btn btn-primary" aria-label="Mulai belajar modul">Mulai Belajar</a>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="code-window">
+        <div class="code-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-filename">app.py</span>
+        </div>
+        <pre class="code-body"><span class="c-purple">from</span> kiro <span class="c-purple">import</span> Agent
+
+<span class="c-comment"># Kiro memahami konteks proyekmu</span>
+agent = Agent(<span class="c-green">"Bantu saya refactor"</span>)
+agent.run(<span class="c-blue">context=</span><span class="c-green">"#File src/"</span>)
+
+<span class="c-comment"># Hasilnya? Kode bersih, instan ✨</span></pre>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PROGRESS TRACKER ===== -->
+  <section class="progress-section" id="progress" aria-label="Progress belajar">
+    <div class="container">
+      <div class="progress-card">
+        <div class="progress-info">
+          <span class="progress-icon" aria-hidden="true">📚</span>
+          <div>
+            <p class="progress-label">Progress Belajar</p>
+            <p class="progress-count" id="progressCount">0 / 5 topik dipelajari</p>
+          </div>
+        </div>
+        <div class="progress-bar-wrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" aria-label="Progress bar belajar" id="progressBarWrap">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <p class="progress-pct" id="progressPct">0%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODULES ===== -->
+  <main id="modules">
+    <div class="container">
+      <h2 class="section-title">Modul Pembelajaran</h2>
+      <p class="section-sub">Lima topik esensial untuk menguasai Kiro dari nol.</p>
+
+      <!-- Module 1 -->
+      <article class="module-card" id="module-1" aria-labelledby="mod1-title">
+        <div class="module-header">
+          <span class="module-number" aria-hidden="true">01</span>
+          <div>
+            <h3 class="module-title" id="mod1-title">Apa itu Kiro?</h3>
+            <span class="module-tag">Pengenalan</span>
+          </div>
+        </div>
+        <div class="module-body">
+          <p class="module-desc">Kiro adalah <strong>AI-powered development environment</strong> yang membantu developer menulis kode lebih cepat. Kiro bisa memahami konteks proyek, mengedit file, menjalankan terminal, dan berkolaborasi seperti partner coding sungguhan — bukan sekadar chatbot.</p>
+          <div class="module-tip">
+            <span class="tip-icon" aria-hidden="true">💡</span>
+            <div>
+              <strong>Tips Praktis</strong>
+              <p>Mulai sesi baru dengan menjelaskan tujuan proyekmu secara singkat. Konteks awal yang jelas membantu Kiro memberikan saran yang lebih relevan dan akurat sepanjang sesi.</p>
+            </div>
+          </div>
+          <div class="module-example">
+            <p class="example-label">Contoh penggunaan:</p>
+            <code class="code-inline">"Saya sedang membangun REST API dengan FastAPI. Bantu saya buat endpoint untuk autentikasi user."</code>
+          </div>
+        </div>
+        <div class="module-footer">
+          <button class="btn-done" id="done-1" data-module="1" onclick="markDone(1)" aria-label="Tandai modul Apa itu Kiro sebagai selesai">
+            <span class="done-icon" aria-hidden="true">✓</span> Sudah Paham
+          </button>
+        </div>
+      </article>
+
+      <!-- Module 2 -->
+      <article class="module-card" id="module-2" aria-labelledby="mod2-title">
+        <div class="module-header">
+          <span class="module-number" aria-hidden="true">02</span>
+          <div>
+            <h3 class="module-title" id="mod2-title">Vibe vs Spec Session</h3>
+            <span class="module-tag">Workflow</span>
+          </div>
+        </div>
+        <div class="module-body">
+          <p class="module-desc"><strong>Vibe session</strong> cocok untuk eksplorasi cepat dan ide spontan tanpa struktur ketat — langsung koding tanpa perencanaan panjang. <strong>Spec session</strong> lebih terstruktur: Kiro membuat spec document terlebih dahulu sebelum mengimplementasi, cocok untuk fitur besar yang butuh perencanaan matang.</p>
+          <div class="module-tip">
+            <span class="tip-icon" aria-hidden="true">💡</span>
+            <div>
+              <strong>Tips Praktis</strong>
+              <p>Gunakan Spec session untuk fitur yang butuh perencanaan matang — misalnya sistem autentikasi, database schema baru, atau refactor besar. Gunakan Vibe session untuk prototyping atau perbaikan kecil.</p>
+            </div>
+          </div>
+          <div class="module-example">
+            <p class="example-label">Perbandingan:</p>
+            <div class="compare-grid">
+              <div class="compare-item">
+                <span class="compare-label vibe">Vibe</span>
+                <p>Spontan, cepat, eksploratif. Langsung minta Kiro implementasi tanpa dokumen rencana.</p>
+              </div>
+              <div class="compare-item">
+                <span class="compare-label spec">Spec</span>
+                <p>Terstruktur, ada dokumen rencana dulu. Cocok untuk fitur kompleks dan kerja tim.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="module-footer">
+          <button class="btn-done" id="done-2" data-module="2" onclick="markDone(2)" aria-label="Tandai modul Vibe vs Spec Session sebagai selesai">
+            <span class="done-icon" aria-hidden="true">✓</span> Sudah Paham
+          </button>
+        </div>
+      </article>
+
+      <!-- Module 3 -->
+      <article class="module-card" id="module-3" aria-labelledby="mod3-title">
+        <div class="module-header">
+          <span class="module-number" aria-hidden="true">03</span>
+          <div>
+            <h3 class="module-title" id="mod3-title">Autopilot vs Supervised Mode</h3>
+            <span class="module-tag">Mode Kerja</span>
+          </div>
+        </div>
+        <div class="module-body">
+          <p class="module-desc"><strong>Autopilot mode</strong>: Kiro bekerja mandiri tanpa perlu konfirmasi setiap langkah, cocok untuk task rutin yang sudah kamu percayai. <strong>Supervised mode</strong>: setiap aksi perlu persetujuanmu sebelum dieksekusi, lebih aman untuk perubahan penting atau kode production.</p>
+          <div class="module-tip">
+            <span class="tip-icon" aria-hidden="true">💡</span>
+            <div>
+              <strong>Tips Praktis</strong>
+              <p>Mulai dengan Supervised mode untuk memahami cara kerja Kiro dan membangun kepercayaan, lalu beralih ke Autopilot untuk efisiensi saat kamu sudah familiar dengan pola kerjanya.</p>
+            </div>
+          </div>
+          <div class="module-example">
+            <p class="example-label">Kapan pakai masing-masing?</p>
+            <code class="code-inline">Autopilot → Tugas berulang, boilerplate, test generation<br/>Supervised → Deploy, hapus file, ubah konfigurasi penting</code>
+          </div>
+        </div>
+        <div class="module-footer">
+          <button class="btn-done" id="done-3" data-module="3" onclick="markDone(3)" aria-label="Tandai modul Autopilot vs Supervised sebagai selesai">
+            <span class="done-icon" aria-hidden="true">✓</span> Sudah Paham
+          </button>
+        </div>
+      </article>
+
+      <!-- Module 4 -->
+      <article class="module-card" id="module-4" aria-labelledby="mod4-title">
+        <div class="module-header">
+          <span class="module-number" aria-hidden="true">04</span>
+          <div>
+            <h3 class="module-title" id="mod4-title">Cara Pakai Context (#File, #Folder, dll.)</h3>
+            <span class="module-tag">Konteks</span>
+          </div>
+        </div>
+        <div class="module-body">
+          <p class="module-desc">Gunakan simbol <strong>#</strong> untuk menambah konteks ke percakapan dengan Kiro: <code>#File</code> untuk mereferensikan file spesifik, <code>#Folder</code> untuk seluruh direktori, <code>#Terminal</code> untuk output terminal terkini, <code>#Selection</code> untuk kode yang sedang dipilih di editor.</p>
+          <div class="module-tip">
+            <span class="tip-icon" aria-hidden="true">💡</span>
+            <div>
+              <strong>Tips Praktis</strong>
+              <p>Semakin relevan konteks yang kamu berikan, semakin akurat respons Kiro. Daripada bertanya umum, sertakan file yang relevan agar Kiro bisa melihat kode aktualmu.</p>
+            </div>
+          </div>
+          <div class="module-example">
+            <p class="example-label">Contoh penggunaan konteks:</p>
+            <code class="code-inline">"Ada bug di fungsi ini #File src/auth.py — tolong cek kenapa token expired terlalu cepat."</code>
+          </div>
+        </div>
+        <div class="module-footer">
+          <button class="btn-done" id="done-4" data-module="4" onclick="markDone(4)" aria-label="Tandai modul Context sebagai selesai">
+            <span class="done-icon" aria-hidden="true">✓</span> Sudah Paham
+          </button>
+        </div>
+      </article>
+
+      <!-- Module 5 -->
+      <article class="module-card" id="module-5" aria-labelledby="mod5-title">
+        <div class="module-header">
+          <span class="module-number" aria-hidden="true">05</span>
+          <div>
+            <h3 class="module-title" id="mod5-title">Hooks &amp; Steering</h3>
+            <span class="module-tag">Kustomisasi</span>
+          </div>
+        </div>
+        <div class="module-body">
+          <p class="module-desc"><strong>Hooks</strong> memungkinkan kamu menjalankan aksi otomatis saat event terjadi (misalnya: format kode otomatis setelah file disimpan). <strong>Steering files</strong> adalah instruksi permanen di <code>.kiro/steering/</code> yang selalu dibaca Kiro — cocok untuk coding conventions, tech stack preferences, atau aturan proyek timmu.</p>
+          <div class="module-tip">
+            <span class="tip-icon" aria-hidden="true">💡</span>
+            <div>
+              <strong>Tips Praktis</strong>
+              <p>Buat steering file untuk mendokumentasikan keputusan arsitektur proyekmu. Misalnya: "Gunakan TypeScript strict mode, hindari any, gunakan Zod untuk validasi." Kiro akan selalu mengikutinya.</p>
+            </div>
+          </div>
+          <div class="module-example">
+            <p class="example-label">Contoh steering file:</p>
+            <code class="code-inline"># .kiro/steering/conventions.md<br/>- Gunakan Python 3.11+<br/>- Format dengan Black, linting dengan Ruff<br/>- Semua fungsi harus ada type hints</code>
+          </div>
+        </div>
+        <div class="module-footer">
+          <button class="btn-done" id="done-5" data-module="5" onclick="markDone(5)" aria-label="Tandai modul Hooks dan Steering sebagai selesai">
+            <span class="done-icon" aria-hidden="true">✓</span> Sudah Paham
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ===== QUIZ ===== -->
+  <section id="quiz" class="quiz-section" aria-labelledby="quiz-title">
+    <div class="container">
+      <h2 class="section-title" id="quiz-title">Quiz Interaktif</h2>
+      <p class="section-sub">Uji pemahamanmu! Jawab 5 soal berikut lalu klik Submit.</p>
+
+      <form id="quizForm" novalidate aria-label="Form quiz Belajar Kiro">
+
+        <!-- Q1 -->
+        <div class="quiz-card" id="q1-card">
+          <p class="quiz-question"><span class="quiz-num" aria-hidden="true">1</span> Apa kegunaan utama Steering File di Kiro?</p>
+          <ul class="quiz-options" role="radiogroup" aria-labelledby="q1-label">
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="A" /> <span class="opt-letter" aria-hidden="true">A</span>
+                Menyimpan log aktivitas Kiro secara otomatis
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="B" /> <span class="opt-letter" aria-hidden="true">B</span>
+                Instruksi permanen yang selalu dibaca Kiro di setiap sesi
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="C" /> <span class="opt-letter" aria-hidden="true">C</span>
+                Menjalankan aksi otomatis saat event file disimpan
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="D" /> <span class="opt-letter" aria-hidden="true">D</span>
+                Mengatur tampilan tema editor Kiro
+              </label>
+            </li>
+          </ul>
+          <div class="quiz-feedback" id="q1-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-card" id="q2-card">
+          <p class="quiz-question"><span class="quiz-num" aria-hidden="true">2</span> Mode mana yang paling cocok untuk developer yang baru mulai belajar Kiro?</p>
+          <ul class="quiz-options" role="radiogroup" aria-labelledby="q2-label">
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="A" /> <span class="opt-letter" aria-hidden="true">A</span>
+                Autopilot mode, karena lebih cepat
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="B" /> <span class="opt-letter" aria-hidden="true">B</span>
+                Vibe session, karena lebih santai
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="C" /> <span class="opt-letter" aria-hidden="true">C</span>
+                Supervised mode, karena setiap aksi perlu persetujuan
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="D" /> <span class="opt-letter" aria-hidden="true">D</span>
+                Spec session, karena ada dokumentasi otomatis
+              </label>
+            </li>
+          </ul>
+          <div class="quiz-feedback" id="q2-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-card" id="q3-card">
+          <p class="quiz-question"><span class="quiz-num" aria-hidden="true">3</span> Apa perbedaan utama antara Spec Session dan Vibe Session?</p>
+          <ul class="quiz-options" role="radiogroup" aria-labelledby="q3-label">
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="A" /> <span class="opt-letter" aria-hidden="true">A</span>
+                Spec session lebih cepat karena tanpa konfirmasi
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="B" /> <span class="opt-letter" aria-hidden="true">B</span>
+                Spec session membuat dokumen rencana terlebih dahulu sebelum implementasi
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="C" /> <span class="opt-letter" aria-hidden="true">C</span>
+                Vibe session hanya bisa digunakan di mobile
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="D" /> <span class="opt-letter" aria-hidden="true">D</span>
+                Keduanya sama, hanya beda nama
+              </label>
+            </li>
+          </ul>
+          <div class="quiz-feedback" id="q3-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-card" id="q4-card">
+          <p class="quiz-question"><span class="quiz-num" aria-hidden="true">4</span> Simbol apa yang digunakan untuk menambah konteks file ke percakapan Kiro?</p>
+          <ul class="quiz-options" role="radiogroup" aria-labelledby="q4-label">
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="A" /> <span class="opt-letter" aria-hidden="true">A</span>
+                @ (at sign)
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="B" /> <span class="opt-letter" aria-hidden="true">B</span>
+                $ (dollar sign)
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="C" /> <span class="opt-letter" aria-hidden="true">C</span>
+                # (hash / pound sign)
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="D" /> <span class="opt-letter" aria-hidden="true">D</span>
+                / (slash)
+              </label>
+            </li>
+          </ul>
+          <div class="quiz-feedback" id="q4-feedback" aria-live="polite"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-card" id="q5-card">
+          <p class="quiz-question"><span class="quiz-num" aria-hidden="true">5</span> Apa fungsi utama Hooks di Kiro?</p>
+          <ul class="quiz-options" role="radiogroup" aria-labelledby="q5-label">
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="A" /> <span class="opt-letter" aria-hidden="true">A</span>
+                Mengganti tema visual editor secara otomatis
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="B" /> <span class="opt-letter" aria-hidden="true">B</span>
+                Menjalankan aksi otomatis saat event tertentu terjadi
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="C" /> <span class="opt-letter" aria-hidden="true">C</span>
+                Menyimpan histori percakapan dengan Kiro
+              </label>
+            </li>
+            <li>
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="D" /> <span class="opt-letter" aria-hidden="true">D</span>
+                Mengunci file agar tidak bisa diedit Kiro
+              </label>
+            </li>
+          </ul>
+          <div class="quiz-feedback" id="q5-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="quiz-actions">
+          <button type="button" class="btn btn-primary" id="submitQuiz" onclick="submitQuiz()" aria-label="Submit jawaban quiz">
+            Submit Quiz
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Score Result -->
+      <div class="quiz-result" id="quizResult" aria-live="polite" hidden>
+        <div class="result-score-wrap">
+          <div class="result-circle" id="resultCircle">
+            <span class="result-score-num" id="resultScoreNum">0</span>
+            <span class="result-score-total">/5</span>
+          </div>
+          <div>
+            <p class="result-title" id="resultTitle"></p>
+            <p class="result-sub" id="resultSub"></p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-outline" onclick="resetQuiz()" aria-label="Coba quiz lagi">Coba Lagi</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <p>Dibuat dengan ❤️ untuk belajar Kiro · <a href="https://kiro.dev" target="_blank" rel="noopener noreferrer" class="footer-link">kiro.dev</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
